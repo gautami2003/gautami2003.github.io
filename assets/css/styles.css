@@ -495,9 +495,213 @@ img {
 
 /*=============== SKILLS ===============*/
 
+/* Skills Section Styles */
+.skills {
+  padding: 60px 0;
+}
+
+.skills__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically */
+}
+
+.skills__content {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skills__box {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for multiple rows */
+  justify-content: center; /* Center the icons */
+}
+
+.skills__group {
+  display: flex;
+  justify-content: center; /* Center group */
+  margin: 10px 0; /* Add vertical spacing between rows */
+}
+
+.skills__data {
+  margin: 10px; /* Space between icons */
+  position: relative; /* Position for tooltip */
+  color: var(--first-color); /* Use the first color */
+  transition: transform 0.3s, color 0.3s; /* Smooth transform and color on hover */
+  opacity: 0.9; /* Set opacity to 0.9 */
+  animation: bounce 0.5s; /* Bounce animation on load */
+}
+
+.skills__data:hover {
+  transform: scale(1.1) rotate(10deg); /* Scale up and rotate icon slightly on hover */
+  color: var(--hover-color); /* Change color on hover (set this variable) */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Glow effect on hover */
+}
+
+.skills__data i {
+  font-size: 20px; /* Smaller icon size */
+  transition: transform 0.3s; /* Smooth transform on hover */
+}
+
+.skills__data:hover i {
+  transform: scale(1.1); /* Scale up icon slightly on hover */
+}
+
+.skills__data::after {
+  content: attr(data-skill); /* Get skill name from data-skill attribute */
+  position: absolute;
+  bottom: 100%; /* Position above the icon */
+  left: 50%; /* Center tooltip */
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: #fff; /* White text */
+  padding: 5px 10px; /* Padding for tooltip */
+  border-radius: 5px; /* Rounded corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.2s ease; /* Smooth fade-in */
+}
+
+.skills__data:hover::after {
+  visibility: visible; /* Show tooltip on hover */
+  opacity: 1; /* Make tooltip visible */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 /*=============== SERVICES ===============*/
+/* General section styles */
+.services {
+  padding: 4rem 0;
+}
 
+.section__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Services container styles */
+.services__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Card styles */
+.services__card {
+  background-color: var(--container-color);
+  padding: 3rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Lift effect on hover */
+.services__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles */
+.services__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Button styles */
+.services__bottom {
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Icon hover effect */
+.services__bottom:hover .services__icon {
+  transform: translateX(0.25rem) scale(1.2);
+}
+
+/* Modal styles */
+.services__modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.services__modal-content {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  animation: fadeIn 0.3s;
+}
+
+.services__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.services__modal-title {
+  margin-bottom: 1rem;
+  font-size: var(--h3-font-size);
+}
+
+/* Adjust grid on smaller screens */
+@media (max-width: 768px) {
+  .services__container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .services__container {
+      grid-template-columns: 1fr;
+  }
+}
 
 /* Services modal */
 

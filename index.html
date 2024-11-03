@@ -6,6 +6,7 @@
 
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         <!--=============== BOXICONS ===============-->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -119,7 +120,7 @@
                 <h2 class="section__title">About Me</h2>
             
                 <div class="about__container container grid"> <!-- Ensure grid class is correct -->
-                    <img src="assets/img/about.png" alt="" class="about__img">
+                    <img src="assets/img/about.jpg" alt="" class="about__img">
             
                     <div class="about__data">
                         <div class="about__info">
@@ -153,15 +154,149 @@
             
             
             <!--=============== SKILLS ===============-->
+
             <section class="skills section" id="skills">
-                
+                <span class="section__subtitle">My Abilities</span>
+                <h2 class="section__title">My Skills</h2>
+            
+                <div class="skills__container container grid">
+                    <div class="skills__content">
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data" data-skill="Python">
+                                    <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="R">
+                                    <img src="https://img.icons8.com/?size=100&id=CLvQeiwFpit4&format=png&color=000000" alt="R" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Java">
+                                    <img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="SQL">
+                                    <img src="https://img.icons8.com/color/48/sql.png" alt="SQL" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Excel">
+                                    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel" style="width: 40px;">
+                                </div>
+                            </div>
+            
+                            <div class="skills__group">
+                                <div class="skills__data" data-skill="Tableau">
+                                    <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Keras">
+                                    <img src="https://www.proedge.hk/sites/default/files/tech_logos/keras.png" alt="Keras" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Scikit-learn">
+                                    <img src="https://numfocus.org/wp-content/uploads/2017/11/scikitlearn-logo-300.png" alt="Scikit-learn" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Matplotlib">
+                                    <img src="https://miro.medium.com/max/3200/1*8i6raEmyewy9GpI47nU1ew.png" alt="Matplotlib" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="PowerPoint">
+                                    <img src="https://img.icons8.com/color/48/microsoft-powerpoint-2019.png" alt="PowerPoint" style="width: 40px;">
+                                </div>
+                            </div>
+            
+                            <div class="skills__group">
+                                <div class="skills__data" data-skill="Hadoop">
+                                    <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Pandas AI">
+                                    <img src="https://img.icons8.com/color/48/pandas.png" alt="Pandas" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="Seaborn">
+                                    <img src="https://tonyzetag.github.io/personal-web/images/logos%20original%20size/seaborn%20logo.png" alt="Seaborn" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="TensorFlow">
+                                    <img src="https://img.icons8.com/color/48/tensorflow.png" alt="TensorFlow" style="width: 40px;">
+                                </div>
+                                <div class="skills__data" data-skill="HTML">
+                                    <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML" style="width: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-
+            
+            
             <!--=============== SERVICES ===============-->
-            <section class="services section">
-                
-            </section>
 
+            <section class="services section">
+                <span class="section__subtitle">My Experience</span>
+                <h2 class="section__title">What I Provide</h2>
+            
+                <div class="services__container container grid">
+                    <!-- Data Scientist Card -->
+                    <div class="services__card">
+                        <h3 class="services__title">Data Scientist</h3>
+                        <span class="services__bottom" onclick="toggleModal(0)">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h3 class="services__modal-title">Data Scientist</h3>
+                                <p>As a Data Scientist, I delve into the oceans of data, extracting insights that drive decision-making, forecast trends, and fuel innovation. Through advanced analytics, machine learning, and statistical modeling, I transform raw data into powerful stories that guide strategic choices and uncover hidden opportunities.</p>
+                                <span class="services__modal-close" onclick="closeModal(0)">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- AI Engineer Card -->
+                    <div class="services__card">
+                        <h3 class="services__title">AI Engineer</h3>
+                        <span class="services__bottom" onclick="toggleModal(1)">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h3 class="services__modal-title">AI Engineer</h3>
+                                <p>As an AI Engineer, I build intelligent systems that learn, adapt, and evolve. From developing neural networks to implementing deep learning models, I create solutions that empower applications with the ability to perceive, reason, and act. My work pushes the boundaries of what's possible, unlocking transformative capabilities across industries.</p>
+                                <span class="services__modal-close" onclick="closeModal(1)">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Data Analyst Card -->
+                    <div class="services__card">
+                        <h3 class="services__title">Data Analyst</h3>
+                        <span class="services__bottom" onclick="toggleModal(2)">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h3 class="services__modal-title">Data Analyst</h3>
+                                <p>As a Data Analyst, I specialize in interpreting complex datasets to reveal trends, patterns, and insights that matter. By crafting visualizations, reports, and dashboards, I make data accessible and actionable, helping organizations understand the “what” and “why” behind their numbers.</p>
+                                <span class="services__modal-close" onclick="closeModal(2)">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- UI/UX Designer Card -->
+                    <div class="services__card">
+                        <h3 class="services__title">UI/UX Designer</h3>
+                        <span class="services__bottom" onclick="toggleModal(3)">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h3 class="services__modal-title">UI/UX Designer</h3>
+                                <p>As a UI/UX Designer, I create digital experiences that are intuitive, engaging, and user-centric. By blending design aesthetics with usability principles, I ensure every interaction feels effortless, enhancing user satisfaction and fostering brand loyalty. My goal is to make technology human-centered and delightful.</p>
+                                <span class="services__modal-close" onclick="closeModal(3)">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                         
+            <!-- JavaScript for Modal Control -->
+            <script>
+              function toggleModal(index) {
+                const modals = document.querySelectorAll(".services__modal");
+                modals[index].style.display = "flex"; // Show modal by setting display to flex
+              }
+            
+              function closeModal(index) {
+                const modals = document.querySelectorAll(".services__modal");
+                modals[index].style.display = "none"; // Hide modal by setting display to none
+              }
+            </script>
+            
+            
             <!--=============== WORK ===============-->
             <section class="work section" id="work">
                 
