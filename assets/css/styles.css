@@ -580,27 +580,11 @@ img {
 
 /*=============== SERVICES ===============*/
 /* General section styles */
-.services {
-  padding: 4rem 0;
-}
-
-.section__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--first-color);
-  text-align: center;
-}
-
-.section__title {
-  font-size: var(--h2-font-size);
-  text-align: center;
-  margin: 1rem 0;
-}
-
-/* Services container styles */
 .services__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* Force two columns */
+  gap: 1.5rem;
+  padding-top: 1rem;
 }
 
 /* Card styles */
@@ -608,9 +592,7 @@ img {
   background-color: var(--container-color);
   padding: 3rem 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
 /* Lift effect on hover */
@@ -637,83 +619,202 @@ img {
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 600px) {
+  .services__container {
+    grid-template-columns: repeat(2, 1fr); /* Maintain two columns on small screens */
+  }
+}
+
 /* Icon hover effect */
 .services__bottom:hover .services__icon {
-  transform: translateX(0.25rem) scale(1.2);
+  transform: translateX(0.25rem);
 }
+
+.services__icon {
+  font-size: 1rem;
+  transition: .4s;
+}
+
+/* Services modal */
 
 /* Modal styles */
 .services__modal {
-  display: none;
   position: fixed;
+  inset: 0; /* Sets top, right, bottom, and left to 0 */
   z-index: 1000;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
+  background-color: hsla(var(--second-hue), 28%, 16%, 0.7); /* Slightly transparent background */
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .services__modal-content {
-  background-color: var(--container-color);
-  padding: 2rem;
-  border-radius: 0.5rem;
-  max-width: 600px;
-  width: 90%;
+  background-color: var(--body-color);
+  padding: 4.5rem 2rem;
+  border-radius: 1.5rem;
+  width: 90%; /* Adjust width to fit smaller screens */
+  max-height: 90%; /* Limit height for modal content */
+  overflow-y: auto; /* Enable scrolling for overflow */
   position: relative;
   animation: fadeIn 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
+.services__modal-title,
+.services__modal-description {
+  text-align: center;
+}
+
+.services__modal-title {
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.services__modal-description {
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+
+.services__modal-list {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.services__modal-item {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 0.5rem;
+}
+
+.services__modal-icon {
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.services__modal-info {
+  font-size: var(--small-font-size);
+}
+
+/* Close button */
 .services__modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--first-color);
   cursor: pointer;
   font-size: 1.5rem;
 }
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.services__modal-title {
-  margin-bottom: 1rem;
-  font-size: var(--h3-font-size);
+/* Active modal */
+.active-modal {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Adjust grid on smaller screens */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .services__container {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .services__modal-content {
+    padding: 3rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .services__container {
-      grid-template-columns: 1fr;
+  .services__modal-content {
+    padding: 2rem 1rem;
   }
 }
 
-/* Services modal */
-
-
-/*Active modal*/
-
 
 /*=============== WORK ===============*/
+/* Container for the work section */
+.work__container {
+  padding-top: 1rem;
+}
 
+/* Filters container styles */
+.work__filters {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  column-gap: 0.75rem; /* Space between items */
+  margin-bottom: 2rem; /* Space below the filters */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
 
-/* Active item work*/
+/* Individual filter item styles */
+.work__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.75rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effects */
+  text-align: center; /* Center text inside filter items */
+}
 
+/* Card styles */
+.work__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add lift effect on hover */
+}
+
+/* Image styles */
+.work__img {
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Title styles */
+.work__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.25rem;
+}
+
+/* Button styles */
+.work__button {
+  width: max-content;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+/* Button hover effect */
+.work__button:hover .work__icon {
+  transform: translateX(0.25rem);
+}
+
+/* Icon styles */
+.work__icon {
+  font-size: 1rem;
+  transition: 0.4s;
+}
+
+/* Active filter item styles */
+.active-work {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
 
 /*=============== TESTIMONIAL ===============*/
 
