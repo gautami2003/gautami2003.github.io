@@ -70,7 +70,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Link active work */ 
+   // JavaScript to detect when items enter the viewport and animate them
+   const timelineItems = document.querySelectorAll('.timeline-item');
 
+   const observerOptions = {
+       root: null,
+       rootMargin: '0px',
+       threshold: 0.5 // Trigger animation when 50% of the item is in view
+   };
+
+   const observer = new IntersectionObserver((entries, observer) => {
+       entries.forEach(entry => {
+           if (entry.isIntersecting) {
+               entry.target.classList.add('visible');
+           }
+       });
+   }, observerOptions);
+
+   timelineItems.forEach(item => {
+       observer.observe(item);
+   });
 
 /*=============== SWIPER TESTIMONIAL ===============*/
 
