@@ -7,6 +7,7 @@
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <!--=============== BOXICONS ===============-->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -428,45 +429,65 @@
                 <span class="section__subtitle">My Portfolio</span>
                 <h2 class="section__title">Projects</h2>
             
+                <!-- Filter Controls -->
                 <div class="work__filters">
-                    <span class="work__item active-work" role="button" tabindex="0">All</span>
-                    <span class="work__item" role="button" tabindex="0">Machine Learning</span>
-                    <span class="work__item" role="button" tabindex="0">Web Design</span>
-                    <span class="work__item" role="button" tabindex="0">Deep Learning</span>
-                    <span class="work__item" role="button" tabindex="0">Artificial Intelligence</span>
+                    <span class="work__item active-work" data-filter="all">All</span>
+                    <span class="work__item" data-filter="machine-learning">Machine Learning</span>
+                    <span class="work__item" data-filter="web-design">Web Design</span>
+                    <span class="work__item" data-filter="deep-learning">Deep Learning</span>
+                    <span class="work__item" data-filter="artificial-intelligence">Artificial Intelligence</span>
                 </div>
             
-                <div class="work__container container grid">
-                    <div class="work__card">
-                        <img src="assets/img/work1.jpg" alt="Project 1" class="work__img">
-                        <h3 class="work__title">Project 1</h3>
-                        <a href="#" class="work__button" aria-label="Demo for Project 1">
-                            Demo <i class="bx bx-right-arrow-alt work-icon"></i>
-                        </a>
+                <!-- Project Container -->
+                <div class="work__container container grid" id="work-container">
+                    <div class="work__card" data-category="machine-learning">
+                        <img src="assets/img/work1.jpg" alt="Machine Learning Project 1" class="work__img">
+                        <div class="work__overlay">
+                            <h3 class="work__title">Machine Learning Project 1</h3>
+                            <a href="#" class="work__button" aria-label="View Machine Learning Project 1">
+                                <i class="bx bx-show work__icon"></i>
+                            </a>
+                        </div>
                     </div>
             
-                    <div class="work__card">
-                        <img src="assets/img/work2.jpg" alt="Project 2" class="work__img">
-                        <h3 class="work__title">Project 2</h3>
-                        <a href="#" class="work__button" aria-label="Demo for Project 2">
-                            Demo <i class="bx bx-right-arrow-alt work-icon"></i>
-                        </a>
+                    <div class="work__card" data-category="web-design">
+                        <img src="assets/img/work2.jpg" alt="Web Design Project 2" class="work__img">
+                        <div class="work__overlay">
+                            <h3 class="work__title">Web Design Project 2</h3>
+                            <a href="#" class="work__button" aria-label="View Web Design Project 2">
+                                <i class="bx bx-show work__icon"></i>
+                            </a>
+                        </div>
                     </div>
             
-                    <div class="work__card">
-                        <img src="assets/img/work3.jpg" alt="Project 3" class="work__img">
-                        <h3 class="work__title">Project 3</h3>
-                        <a href="#" class="work__button" aria-label="Demo for Project 3">
-                            Demo <i class="bx bx-right-arrow-alt work-icon"></i>
-                        </a>
+                    <div class="work__card" data-category="machine-learning">
+                        <img src="assets/img/work3.jpg" alt="Machine Learning Project 3" class="work__img">
+                        <div class="work__overlay">
+                            <h3 class="work__title">Machine Learning Project 3</h3>
+                            <a href="#" class="work__button" aria-label="View Machine Learning Project 3">
+                                <i class="bx bx-show work__icon"></i>
+                            </a>
+                        </div>
                     </div>
             
-                    <div class="work__card">
-                        <img src="assets/img/work4.jpg" alt="Project 4" class="work__img">
-                        <h3 class="work__title">Project 4</h3>
-                        <a href="#" class="work__button" aria-label="Demo for Project 4">
-                            Demo <i class="bx bx-right-arrow-alt work-icon"></i>
-                        </a>
+                    <div class="work__card" data-category="deep-learning">
+                        <img src="assets/img/work4.jpg" alt="Deep Learning Project 4" class="work__img">
+                        <div class="work__overlay">
+                            <h3 class="work__title">Deep Learning Project 4</h3>
+                            <a href="#" class="work__button" aria-label="View Deep Learning Project 4">
+                                <i class="bx bx-show work__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="work__card" data-category="artificial-intelligence">
+                        <img src="assets/img/work5.jpg" alt="Artificial Intelligence Project" class="work__img">
+                        <div class="work__overlay">
+                            <h3 class="work__title">Artificial Intelligence Project</h3>
+                            <a href="#" class="work__button" aria-label="View Artificial Intelligence Project">
+                                <i class="bx bx-show work__icon"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

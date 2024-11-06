@@ -40,6 +40,34 @@ document.addEventListener("DOMContentLoaded", () => {
   
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
 
+document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.work__item');
+  const projectCards = document.querySelectorAll('.work__card');
+
+  // Add click event listeners to each filter button
+  filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+          // Remove active class from all buttons and add it to the clicked one
+          filterButtons.forEach(btn => btn.classList.remove('active-work'));
+          this.classList.add('active-work');
+
+          // Get the filter category from the clicked button
+          const filterCategory = this.getAttribute('data-filter');
+
+          // Show or hide project cards based on the filter
+          projectCards.forEach(card => {
+              const cardCategory = card.getAttribute('data-category');
+              
+              if (filterCategory === 'all' || cardCategory === filterCategory) {
+                  card.style.display = 'block'; // Show matching cards
+              } else {
+                  card.style.display = 'none'; // Hide non-matching cards
+              }
+          });
+      });
+  });
+});
+
 
 /* Link active work */ 
 
