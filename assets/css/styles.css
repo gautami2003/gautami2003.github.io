@@ -183,7 +183,6 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 
 .container {
-    max-width: 968px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
@@ -198,7 +197,6 @@ img {
 }
 
 .section {
-    max-width: 1200px;
     padding: 4.5rem 0 1rem;
 }
 
@@ -675,25 +673,43 @@ img {
 
 /*=============== SERVICES ===============*/
 
+.services__card {
+    background-color: var(--container-color);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: auto;
+    /* Allow the card to expand based on its content */
+    display: inline-block;
+    /* Make sure it respects the size of the content */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width/height */
+}
 
-/* General section styles */
+
+/* If you want to make the container adjust based on content, you might also want to avoid giving it fixed sizes */
 
 .services__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Force two columns */
+    /* Default: 2 columns */
     gap: 1.5rem;
     padding-top: 1rem;
+    margin: 2rem;
+    width: auto;
+    /* Ensures the container adjusts to the content's width */
+    max-width: none;
+    /* Prevent container from being restricted */
 }
 
 
-/* Card styles */
+/* On larger screens (min-width: 1025px), create 4 columns */
 
-.services__card {
-    background-color: var(--container-color);
-    padding: 3rem 1.5rem;
-    border-radius: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (min-width: 1025px) {
+    .services__container {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns on larger screens */
+    }
 }
 
 
