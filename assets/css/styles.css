@@ -883,7 +883,10 @@ img {
 
 
 /*=============== WORK ===============*/
+
+
 /* Container for the work section */
+
 .work__container {
     padding-top: 1rem;
     display: grid;
@@ -891,7 +894,9 @@ img {
     gap: 1.5rem;
 }
 
+
 /* Filters container styles */
+
 .work__filters {
     display: flex;
     justify-content: center;
@@ -901,7 +906,9 @@ img {
     flex-wrap: wrap;
 }
 
+
 /* Individual filter item styles */
+
 .work__item {
     cursor: pointer;
     color: var(--title-color);
@@ -916,13 +923,17 @@ img {
     color: var(--body-color);
 }
 
+
 /* Active filter item styles */
+
 .active-work {
     background-color: var(--first-color);
     color: var(--body-color);
 }
 
+
 /* Card styles */
+
 .work__card {
     position: relative;
     overflow: hidden;
@@ -936,7 +947,9 @@ img {
     transform: scale(1.05);
 }
 
+
 /* Image styles */
+
 .work__img {
     width: 100%;
     height: auto;
@@ -948,29 +961,36 @@ img {
 .work__card:hover .work__img {
     transform: scale(1.1);
 }
+
+
 /* Overlay styles */
+
 .work__overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Hide overlay by default */
+    opacity: 0;
+    /* Hide overlay by default */
     transition: opacity 0.3s ease;
     border-radius: 1rem;
 }
 
 .work__card:hover .work__overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
+    /* Show overlay on hover */
 }
 
 
 /* Title styles */
+
 .work__title {
     font-size: 1.1rem;
     color: var(--first-color);
@@ -978,14 +998,22 @@ img {
     margin-bottom: 0.5rem;
     text-align: center;
     display: inline-block;
-    background-color: transparent; /* No background */
-    padding: 0.25rem 0.5rem; /* Add padding */
-    border-radius: 0.5rem; /* Optional: rounded corners for title */
+    background-color: transparent;
+    /* No background */
+    padding: 0.25rem 0.5rem;
+    /* Add padding */
+    border-radius: 0.5rem;
+    /* Optional: rounded corners for title */
 }
+
+
 /* Button styles (eye icon) */
+
 .work__button {
-    background: transparent; /* Remove background */
-    color: var(--first-color); /* Default eye icon color */
+    background: transparent;
+    /* Remove background */
+    color: var(--first-color);
+    /* Default eye icon color */
     padding: 0.5rem;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -996,28 +1024,35 @@ img {
     transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
+
 /* Hover effect for eye icon */
+
 .work__button:hover {
-    color: var(--body-color); /* Change icon color to body color */
-    transform: scale(1.2); /* Slightly enlarge the icon */
+    color: var(--body-color);
+    /* Change icon color to body color */
+    transform: scale(1.2);
+    /* Slightly enlarge the icon */
 }
 
+
 /* Icon styles */
+
 .work__button .work__icon {
     transition: transform 0.3s, color 0.3s;
 }
 
 .work__button:hover .work__icon {
-    transform: scale(1.2); /* Slightly enlarge icon */
+    transform: scale(1.2);
+    /* Slightly enlarge icon */
 }
 
 
 /* Responsive adjustments */
+
 @media (max-width: 768px) {
     .work__filters {
         column-gap: 0.5rem;
     }
-
     .work__card {
         margin-bottom: 1rem;
     }
@@ -1025,125 +1060,284 @@ img {
 
 
 /* Desktop Styles */
+
+
 /* Main Styles */
-/* Grid Styling */
+
+
+/* General Grid Styling */
+
+
+/* General Grid Styling */
+
+
+/* General Grid Styling */
+
 .grid-education {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px;  /* Add gap between containers */
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    /* Ensures exactly two columns */
+    gap: 20px;
     align-items: start;
     justify-items: center;
-    margin: 2rem;  /* Maximum margin around the grid */
+    margin: 0 auto;
+    /* Centers the grid container horizontally */
     width: 100%;
+    max-width: 1200px;
+    /* Ensures grid doesn't stretch too wide */
+    padding: 0 1rem;
+    /* Adds padding to the left and right */
 }
-/* Container Styling for Education and Experience */
+
 .container-education {
-    width: 100%;  /* Full width of the parent container */
-    padding: 30px;  /* Added more padding for better spacing */
-    margin: 2rem;  /* 2rem margin on all sides */
+    padding: 20px;
+    margin: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Slightly increased shadow for a more prominent look */
-    font-size: 1.1em;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    font-size: 1em;
     color: var(--first-color);
     font-weight: 600;
     text-align: center;
+    /* Ensuring this container is also centered in its parent */
+    max-width: 1200px;
+    /* Ensures container doesn't stretch too wide */
+    margin-left: auto;
+    margin-right: auto;
+    /* Centers the container */
 }
 
+
 /* Card Styling */
-.education-card {
-    width: 100%; /* Ensure the card takes full width of the container */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px; /* Increased gap between card elements for better readability */
-    margin: 2rem;
-}
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;  /* More padding inside the card */
-    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: flex-start;
+    /* Ensure content aligns at the top */
+    padding: 20px;
+    background-color: var(--container-color);
     border-radius: 10px;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     text-align: center;
-    width: 100%; /* Make the card take the full width */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    /* Ensures card takes full width within the grid cell */
+    max-width: 300px;
+    /* Ensures the card doesn't exceed 300px in width */
+    box-sizing: border-box;
     position: relative;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Enhanced shadow */
-    margin: 2rem 0;  /* 2rem margin on top and bottom to create space */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+    /* Adds vertical spacing between cards */
+    height: auto;
+    /* Adjust height to content */
+    overflow: hidden;
+    /* Ensure content stays within the card */
 }
 
 .card:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+    /* Subtle hover effect */
+    background-color: var(--highlight-color);
+    /* Change on hover (optional) */
 }
 
+.card img {
+    width: 100%;
+    /* Make sure images scale within the card */
+    max-height: 200px;
+    /* Limit the height of images if needed */
+    object-fit: cover;
+    /* Ensures the image maintains its aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    /* Space below the image */
+}
+
+
+/* Styling for the icon inside the card */
+
 .card .icon {
-    font-size: 1.6em;  /* Increased icon size */
+    font-size: 0.9rem;
+    /* Smaller icon size */
     background-color: #223;
     color: #fff;
     border-radius: 50%;
-    width: 70px;  /* Larger icon size */
-    height: 70px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;  /* Added margin to create more space between icon and text */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
-.card h3, .card span {
-    font-size: 1.1em;  /* Slightly larger text */
+
+/* Styling for text inside the card */
+
+.card h3,
+.card span {
+    font-size: 0.7em;
+    /* Smaller font size */
     color: #ddd;
 }
+
+
+/* Continuous animation for "Tap to see more" */
+
+.card span:last-of-type {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #ddd;
+    animation: bounce 1s infinite;
+}
+
+
+/* Style for the images inside the card */
+
+.card .icons img {
+    width: 18px;
+    height: 18px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Glowing effect on hover */
+
+.card:hover .icons img {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.8);
+}
+
+
+/* Text reveal on click */
 
 .card .text-container {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease;
-    padding: 0 15px;  /* Added padding for better spacing */
+    padding: 0 15px;
 }
+
+
+/* Hide the default radio button */
 
 input[type="radio"] {
     display: none;
 }
 
-input[type="radio"]:checked + label .text-container {
+
+/* Initially hide all text containers */
+
+.text-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* Show text container when the radio button is checked */
+
+input[type="radio"]:checked+label .text-container {
     max-height: 300px;
     opacity: 1;
 }
 
-input[type="radio"]:checked + label {
-    background-color: rgba(0, 0, 0, 0.8);
+
+/* Remove the down arrow when the card is open */
+
+input[type="radio"]:checked+label span:last-of-type {
+    display: none;
 }
 
-input[type="radio"]:checked + label h3,
-input[type="radio"]:checked + label span {
-    font-size: 1.2em;
+
+/* Prevent interaction with the hidden text container */
+
+input[type="radio"]:not(:checked)+label .text-container {
+    pointer-events: none;
+}
+
+
+/* Optional: Add smooth transitions for text container visibility */
+
+input[type="radio"]:not(:checked)+label {
+    cursor: pointer;
+    /* Ensure that the label still acts like a clickable button */
+}
+
+
+/* Text hover effect */
+
+.card:hover span {
     font-weight: 700;
+    font-size: 1.1em;
 }
 
-/* Responsive Styles */
+
+/* Responsive Styling */
+
 @media (max-width: 768px) {
     .grid-education {
-        grid-template-columns: 1fr; /* Stack the columns on mobile */
-        margin: 2rem;
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        justify-items: center;
+        /* Centering the grid items */
     }
-
+    .container-education {
+        padding: 1.5rem;
+    }
     .card {
-        width: 100%; /* Full width on mobile */
-        padding: 20px; /* Adjust padding on smaller screens */
-        margin: 2rem;
+        width: 100%;
+        padding: 18px;
     }
-
     .card .icon {
-        width: 60px;  /* Slightly reduced icon size on mobile */
-        height: 60px;
-        font-size: 1.3em;
+        width: 50px;
+        height: 50px;
+        font-size: 0.8em;
+    }
+    .card .text-container {
+        padding: 0 10px;
+    }
+    .card:hover {
+        transform: scale(1.03);
     }
 }
+
+
+/* Pulse (bounce) animation */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Pulse (bounce) animation */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 /*=============== TESTIMONIAL ===============*/
 
