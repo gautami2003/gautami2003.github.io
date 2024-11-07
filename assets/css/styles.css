@@ -1024,99 +1024,125 @@ img {
 }
 
 
-
-.wrapper1 {
+/* Desktop Styles */
+/* Main Styles */
+/* Grid Styling */
+.grid-education {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;  /* Add gap between containers */
+    align-items: start;
+    justify-items: center;
+    margin: 2rem;  /* Maximum margin around the grid */
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+/* Container Styling for Education and Experience */
+.container-education {
+    width: 100%;  /* Full width of the parent container */
+    padding: 30px;  /* Added more padding for better spacing */
+    margin: 2rem;  /* 2rem margin on all sides */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Slightly increased shadow for a more prominent look */
+    font-size: 1.1em;
+    color: var(--first-color);
+    font-weight: 600;
+    text-align: center;
 }
 
-.container1 {
-    height: 400px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-}
-
-.card {
-    width: 80px;
-    border-radius: .75rem;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 2rem;
-    margin: 0 10px;
-    display: flex;
-    align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-}
-
-.card > .row {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.card > .row > .icon {
-    background: #223;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-}
-
-.card > .row > .description {
+/* Card Styling */
+.education-card {
+    width: 100%; /* Ensure the card takes full width of the container */
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 15px; /* Increased gap between card elements for better readability */
+    margin: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;  /* More padding inside the card */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    width: 100%; /* Make the card take the full width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Enhanced shadow */
+    margin: 2rem 0;  /* 2rem margin on top and bottom to create space */
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card .icon {
+    font-size: 1.6em;  /* Increased icon size */
+    background-color: #223;
+    color: #fff;
+    border-radius: 50%;
+    width: 70px;  /* Larger icon size */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;  /* Added margin to create more space between icon and text */
+}
+
+.card h3, .card span {
+    font-size: 1.1em;  /* Slightly larger text */
+    color: #ddd;
+}
+
+.card .text-container {
+    max-height: 0;
     overflow: hidden;
-    height: 80px;
-    width: 520px;
     opacity: 0;
-    transform: translateY(30px);
-    transition-delay: .3s;
-    transition: all .3s ease;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    padding: 0 15px;  /* Added padding for better spacing */
 }
 
-.description p {
-    color: #b0b0ba;
-    padding-top: 5px;
-}
-
-.description h4 {
-    text-transform: uppercase;
-}
-
-input {
+input[type="radio"] {
     display: none;
 }
 
-input:checked + label {
-    width: 600px;
+input[type="radio"]:checked + label .text-container {
+    max-height: 300px;
+    opacity: 1;
 }
 
-input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+input[type="radio"]:checked + label {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.card[for="c1"] {
-    background-image: url('./img1.jpeg');
+input[type="radio"]:checked + label h3,
+input[type="radio"]:checked + label span {
+    font-size: 1.2em;
+    font-weight: 700;
 }
-.card[for="c2"] {
-    background-image: url('./img2.jpeg');
-}
-.card[for="c3"] {
-    background-image: url('./img3.jpeg');
-}
-.card[for="c4"] {
-    background-image: url('./img4.jpeg');
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid-education {
+        grid-template-columns: 1fr; /* Stack the columns on mobile */
+        margin: 2rem;
+    }
+
+    .card {
+        width: 100%; /* Full width on mobile */
+        padding: 20px; /* Adjust padding on smaller screens */
+        margin: 2rem;
+    }
+
+    .card .icon {
+        width: 60px;  /* Slightly reduced icon size on mobile */
+        height: 60px;
+        font-size: 1.3em;
+    }
 }
 
 /*=============== TESTIMONIAL ===============*/
