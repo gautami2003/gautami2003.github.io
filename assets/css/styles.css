@@ -1072,94 +1072,70 @@ img {
 
 
 /* General Grid Styling */
-
 .grid-education {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
-    /* Ensures exactly two columns */
     gap: 20px;
     align-items: start;
     justify-items: center;
     margin: 0 auto;
-    /* Centers the grid container horizontally */
     width: 100%;
     max-width: 1200px;
-    /* Ensures grid doesn't stretch too wide */
     padding: 0 1rem;
-    /* Adds padding to the left and right */
 }
 
 .container-education {
     padding: 20px;
     margin: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    font-size: 1em;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
     color: var(--first-color);
     font-weight: 600;
     text-align: center;
-    /* Ensuring this container is also centered in its parent */
     max-width: 1200px;
-    /* Ensures container doesn't stretch too wide */
-    margin-left: auto;
-    margin-right: auto;
-    /* Centers the container */
 }
-
-
-/* Card Styling */
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* Ensure content aligns at the top */
     padding: 20px;
     background-color: var(--container-color);
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     text-align: center;
-    /* Ensures card takes full width within the grid cell */
-    max-width: 300px;
-    /* Ensures the card doesn't exceed 300px in width */
+    max-width: 320px;
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     margin: 1rem 0;
-    /* Adds vertical spacing between cards */
-    height: auto;
-    /* Adjust height to content */
     overflow: hidden;
-    /* Ensure content stays within the card */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    /* Subtle hover effect */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
     background-color: var(--highlight-color);
-    /* Change on hover (optional) */
 }
 
 .card img {
-    width: 100%;
-    /* Make sure images scale within the card */
-    max-height: 200px;
-    /* Limit the height of images if needed */
-    object-fit: cover;
-    /* Ensures the image maintains its aspect ratio */
-    border-radius: 8px;
+    width: 80%;
+    max-width: 100px;
+    object-fit: contain;
+    border-radius: 5px;
     margin-bottom: 15px;
-    /* Space below the image */
+    transition: transform 0.3s ease;
 }
 
-
-/* Styling for the icon inside the card */
+.card:hover img {
+    transform: scale(1.1);
+}
 
 .card .icon {
     font-size: 0.9rem;
-    /* Smaller icon size */
     background-color: #223;
     color: #fff;
     border-radius: 50%;
@@ -1172,121 +1148,64 @@ img {
     transition: transform 0.3s ease;
 }
 
-
-/* Styling for text inside the card */
-
 .card h3,
 .card span {
-    font-size: 0.7em;
-    /* Smaller font size */
+    font-size: 0.8em;
     color: #ddd;
 }
-
-
-/* Continuous animation for "Tap to see more" */
 
 .card span:last-of-type {
     display: block;
     margin-top: 8px;
-    font-size: 0.7em;
-    font-weight: normal;
+    font-size: 0.8em;
     color: #ddd;
     animation: bounce 1s infinite;
 }
-
-
-/* Style for the images inside the card */
-
+.icons{
+    gap: 10px;
+}
 .card .icons img {
-    width: 18px;
-    height: 18px;
-    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
-/* Glowing effect on hover */
-
-.card:hover .icons img {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.8);
-}
-
-
-/* Text reveal on click */
-
-.card .text-container {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-    padding: 0 15px;
-}
-
-
-/* Hide the default radio button */
-
-input[type="radio"] {
-    display: none;
-}
-
-
-/* Initially hide all text containers */
 
 .text-container {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease;
+    padding: 0 15px;
 }
 
+input[type="radio"] {
+    display: none;
+}
 
-/* Show text container when the radio button is checked */
-
-input[type="radio"]:checked+label .text-container {
+input[type="radio"]:checked + label .text-container {
     max-height: 300px;
     opacity: 1;
 }
 
-
-/* Remove the down arrow when the card is open */
-
-input[type="radio"]:checked+label span:last-of-type {
+input[type="radio"]:checked + label span:last-of-type {
     display: none;
 }
 
-
-/* Prevent interaction with the hidden text container */
-
-input[type="radio"]:not(:checked)+label .text-container {
+input[type="radio"]:not(:checked) + label .text-container {
     pointer-events: none;
 }
 
-
-/* Optional: Add smooth transitions for text container visibility */
-
-input[type="radio"]:not(:checked)+label {
-    cursor: pointer;
-    /* Ensure that the label still acts like a clickable button */
-}
-
-
-/* Text hover effect */
-
 .card:hover span {
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1em;
 }
-
-
-/* Responsive Styling */
 
 @media (max-width: 768px) {
     .grid-education {
         grid-template-columns: 1fr;
         margin: 1rem;
         justify-items: center;
-        /* Centering the grid items */
     }
     .container-education {
         padding: 1.5rem;
@@ -1308,15 +1227,12 @@ input[type="radio"]:not(:checked)+label {
     }
 }
 
-
-/* Pulse (bounce) animation */
-
 @keyframes bounce {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     100% {
         transform: translateY(0);
@@ -1324,29 +1240,276 @@ input[type="radio"]:not(:checked)+label {
 }
 
 
-/* Pulse (bounce) animation */
+/*=============== Research PAPER ===============*/
+/* Section Styling */
 
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+
+/* Grid Styling */
+.grid-research {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
+/* Card Styling */
+.card-research {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
 
-/*=============== TESTIMONIAL ===============*/
+.card-research:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    text-align: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-research:hover .icon img {
+    transform: rotate(360deg);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: var(--first-color-alt);
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.card-date {
+    font-size: 1rem;
+    color: #adb5bd;
+    margin-bottom: 15px;
+}
+
+.card-summary {
+    font-size: 1rem;
+    color: #626970;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.read-more {
+    background-color: var(--first-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #d834ca;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .grid-research {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-research {
+        width: 100%;
+        max-width: 400px;
+    }
+}
 
 
 /* Swiper class */
 
 
 /*=============== CONTACT ===============*/
+/* Main Container Styling */
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: var(--container-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
+/* Contact Form Section */
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: slideIn 0.5s ease-in-out;
+    padding: 20px;
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    color: var(--first-color);
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: var(--first-color);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/* Input and Textarea Fields */
+.contact-inputs {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    border: 2px solid --first-color;
+    outline: none;
+    padding: 12px 20px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 25px;
+    background: var(--container-color);
+    transition: all 0.3s ease;
+}
+
+.contact-inputs.message-box {
+    height: 120px;
+    padding-top: 15px;
+    border-radius: 15px;
+}
+
+.contact-inputs:focus {
+    border-color: #ff99cc;
+    box-shadow: 0 0 10px rgba(255, 153, 204, 0.3);
+}
+
+.contact-inputs::placeholder {
+    color: #c4a3b8;
+    font-style: italic;
+}
+
+/* Button Styling */
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff99cc, #f5b0ff);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 153, 204, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 153, 204, 0.4);
+}
+
+.submit-button img {
+    height: 14px;
+    margin-left: 5px;
+}
+
+/* Right Image Styling */
+.contact-right img {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Styling */
+@media (max-width: 800px) {
+    .contact-inputs {
+        width: 90vw;
+    }
+
+    .contact-right {
+        display: none;
+    }
+
+    .contact-left {
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding-top: 20px;
+    }
+}
 
 /*=============== FOOTER ===============*/
 
