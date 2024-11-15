@@ -6,34 +6,28 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SERVICES MODAL ===============*/
-document.addEventListener("DOMContentLoaded", () => {
-    const modalViews = document.querySelectorAll('.services__modal');
-    const modalBtns = document.querySelectorAll('.services__bottom');
-    const modalClose = document.querySelectorAll('.services__modal-close');
+// Select all modals, buttons to open modals, and buttons to close modals
+const modalViews = document.querySelectorAll('.services__modal'); // All modals
+const modalBtns = document.querySelectorAll('.services__bottom'); // Buttons to open modals
+const modalClose = document.querySelectorAll('.services__modal-close'); // Buttons to close modals
 
-    // Function to open the modal
-    const openModal = function(modalIndex) {
-        modalViews[modalIndex].classList.add('active-modal');
-    };
+// Function to open a specific modal
+let modal = function(modalIndex) {
+    modalViews[modalIndex].classList.add('active-modal'); // Correct class name syntax
+};
 
-    // Add click event listeners to "See more" buttons to open the corresponding modal
-    modalBtns.forEach((btn, i) => {
-        btn.addEventListener('click', () => openModal(i));
+// Add event listeners to open modals
+modalBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        modal(index); // Open the modal corresponding to the clicked button
     });
+});
 
-    // Add click event listeners to close buttons to close the modal
-    modalClose.forEach((closeBtn, i) => {
-        closeBtn.addEventListener('click', () => {
-            modalViews[i].classList.remove('active-modal');
-        });
-    });
-
-    // Optional: Close the modal when clicking outside the modal content
-    modalViews.forEach((modal) => {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active-modal');
-            }
+// Add event listeners to close modals
+modalClose.forEach((closeBtn) => {
+    closeBtn.addEventListener('click', () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal'); // Remove the active class to close modals
         });
     });
 });
