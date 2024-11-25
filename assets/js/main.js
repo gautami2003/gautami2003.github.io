@@ -1,150 +1,109 @@
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-function scrollHeader() {
+function scrollHeader(){
     const header = document.getElementById('header')
-    if (this.scrollY >= 50) header.classList.add('scroll-header')
+    if(this.scrollY >= 50) header.classList.add('scroll-header')
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll',scrollHeader)
 
 /*=============== SERVICES MODAL ===============*/
-// Select all modals, buttons to open modals, and buttons to close modals
-const modalViews = document.querySelectorAll('.services__modal'); // All modals
-const modalBtns = document.querySelectorAll('.services__bottom'); // Buttons to open modals
-const modalClose = document.querySelectorAll('.services__modal-close'); // Buttons to close modals
-
-// Function to open a specific modal
-let modal = function(modalIndex) {
-    modalViews[modalIndex].classList.add('active-modal'); // Correct class name syntax
-};
-
-// Add event listeners to open modals
-modalBtns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        modal(index); // Open the modal corresponding to the clicked button
-    });
-});
-
-// Add event listeners to close modals
-modalClose.forEach((closeBtn) => {
-    closeBtn.addEventListener('click', () => {
-        modalViews.forEach((modalView) => {
-            modalView.classList.remove('active-modal'); // Remove the active class to close modals
-        });
-    });
-});
-
-/*=============== MIXITUP FILTER PORTFOLIO ===============*/
-
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.work__item');
-    const projectCards = document.querySelectorAll('.work__card');
-
-    // Add click event listeners to each filter button
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons and add it to the clicked one
-            filterButtons.forEach(btn => btn.classList.remove('active-work'));
-            this.classList.add('active-work');
-
-            // Get the filter category from the clicked button
-            const filterCategory = this.getAttribute('data-filter');
-
-            // Show or hide project cards based on the filter
-            projectCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-
-                if (filterCategory === 'all' || cardCategory === filterCategory) {
-                    card.style.display = 'block'; // Show matching cards
-                } else {
-                    card.style.display = 'none'; // Hide non-matching cards
-                }
-            });
-        });
-    });
-});
-
-
-/* Link active work */
-// JavaScript to detect when items enter the viewport and animate them
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5 // Trigger animation when 50% of the item is in view
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-timelineItems.forEach(item => {
-    observer.observe(item);
-});
-
-/*=============== SWIPER TESTIMONIAL ===============*/
-function toggleCertificates() {
-    const scrollContainer = document.getElementById("scrollContainer");
-    scrollContainer.style.display = scrollContainer.style.display === "none" ? "block" : "none";
-}
-
-// Continuous scroll logic
 document.addEventListener("DOMContentLoaded", () => {
-    const scrollContent = document.querySelector(".scroll-content");
-
-    function startScrolling() {
-        scrollContent.style.animation = "scroll-left 20s linear infinite";
-    }
-
-    scrollContent.addEventListener("animationiteration", () => {
-        // Duplicate the certificates for a seamless effect
-        const clone = scrollContent.cloneNode(true);
-        scrollContent.parentNode.appendChild(clone);
-        scrollContent.remove();
+    const modalViews = document.querySelectorAll('.services__modal');
+    const modalBtns = document.querySelectorAll('.services__bottom');
+    const modalClose = document.querySelectorAll('.services__modal-close');
+  
+    // Function to open the modal
+    const openModal = function(modalIndex) {
+      modalViews[modalIndex].classList.add('active-modal');
+    };
+  
+    // Add click event listeners to "See more" buttons to open the corresponding modal
+    modalBtns.forEach((btn, i) => {
+      btn.addEventListener('click', () => openModal(i));
     });
+  
+    // Add click event listeners to close buttons to close the modal
+    modalClose.forEach((closeBtn, i) => {
+      closeBtn.addEventListener('click', () => {
+        modalViews[i].classList.remove('active-modal');
+      });
+    });
+  
+    // Optional: Close the modal when clicking outside the modal content
+    modalViews.forEach((modal) => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active-modal');
+        }
+      });
+    });
+  });
+  
+/*=============== MIXITUP FILTER PORTFOLIO ===============*/
+document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.work__item');
+  const projectCards = document.querySelectorAll('.work__card');
 
-    startScrolling();
+  // Add click event listeners to each filter button
+  filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+          // Remove active class from all buttons and add it to the clicked one
+          filterButtons.forEach(btn => btn.classList.remove('active-work'));
+          this.classList.add('active-work');
+
+          // Get the filter category from the clicked button
+          const filterCategory = this.getAttribute('data-filter');
+
+          // Show or hide project cards based on the filter
+          projectCards.forEach(card => {
+              const cardCategory = card.getAttribute('data-category');
+              
+              if (filterCategory === 'all' || cardCategory === filterCategory) {
+                  card.style.display = 'block'; // Show matching cards
+              } else {
+                  card.style.display = 'none'; // Hide non-matching cards
+              }
+          });
+      });
+  });
 });
 
-function showModal(title, imgPath) {
-    const modal = document.getElementById("certificateModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalImage = document.getElementById("modalImage");
-    const modalText = document.getElementById("modalText");
+function showModal(title, text, imgSrc, logoSrc) {
+  const modalImage = document.getElementById("modalImage");
+  const modalLogo = document.getElementById("modalLogo");
 
-    modal.style.display = "flex";
-    modalTitle.innerText = title;
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalText").textContent = text;
 
-    if (imgPath) {
-        modalImage.style.display = "block";
-        modalImage.src = imgPath;
-        modalText.style.display = "none";
-    } else {
-        modalImage.style.display = "none";
-        modalText.style.display = "block";
-        modalText.innerText = "Certificate image not available.";
-    }
+  if (imgSrc) {
+      modalImage.src = imgSrc;
+      modalImage.style.display = "block";
+  } else {
+      modalImage.style.display = "none"; // Hide the image if no source is provided
+  }
+
+  if (logoSrc) {
+      modalLogo.src = logoSrc;
+      modalLogo.style.display = "block";
+  } else {
+      modalLogo.style.display = "none"; // Hide the logo if no source is provided
+  }
+
+  document.getElementById("certificateModal").style.display = "flex";
 }
 
 function closeModal() {
-    const modal = document.getElementById("certificateModal");
-    const modalImage = document.getElementById("modalImage");
-
-    modal.style.display = "none";
-    modalImage.src = "";
+  document.getElementById("certificateModal").style.display = "none";
 }
 
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById("certificateModal");
-    if (event.target === modal) {
-        closeModal();
-    }
-};
-/*=============== LIGHT DARK THEME ===============*/
+
+/*=============== SWIPER TESTIMONIAL ===============*/
+
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+
+
+/*=============== LIGHT DARK THEME ===============*/ 
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+

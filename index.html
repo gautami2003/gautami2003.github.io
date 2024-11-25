@@ -358,49 +358,86 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section><!-- Certificate Section -->
+<!-- Certificate Section -->
+<section class="certificate section">
+    <span class="section__subtitle">Achievements</span>
+    <h2 class="section__title">Certificates</h2>
 
-                <!-- Certificate Section -->
-                <section class="certificate section">
-                    <span class="section__subtitle">Achievements</span>
-                    <h2 class="section__title">Certificates</h2>
-
-                    <div class="certificates__container">
-                        <!-- Certificate Items -->
-                        <div class="certificate__item" onclick="showModal('Data Analyst and Visualization', './assets/img/IMG-20241125-WA0018.jpg')">
-                            Data Analyst and Visualization
-                        </div>
-                        <div class="certificate__item" onclick="showModal('Gemini for Google WorkSpace', './assets/img/IMG-20241125-WA0016.jpg')">
-                            Gemini for Google WorkSpace
-                        </div>
-                        <div class="certificate__item" onclick="showModal('Getting Started with Machine Learning Algorithms', './assets/img/Machine_Learning_Skillup.jpg')">
-                            Getting Started with Machine Learning Algorithms
-                        </div>
-                        <div class="certificate__item" onclick="showModal('Master Swift and API Building', './assets/img/IMG-20241125-WA0014.jpg')">
-                            Master Swift and API Building
-                        </div>
-                        <div class="certificate__item" onclick="showModal('Google Analytics', './assets/img/IMG-20241125-WA0016.jpg')">
-                            Google Analytics
-                        </div>
-                        <div class="certificate__item" onclick="showModal('Java Full Stack Development', './images/java-fullstack.png')">
-                            Java Full Stack Development
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Modal for Certificates -->
-                <div class="modal" id="certificateModal">
-                    <div class="modal__content">
-                        <span class="modal__close" onclick="closeModal()">×</span>
-                        <h3 class="modal__title" id="modalTitle"></h3>
-                        <img id="modalImage" class="modal__image" src="" alt="Certificate Preview">
-                        <p id="modalText" class="modal__text"></p>
-                    </div>
+    <div class="certificates__container">
+        <!-- Certificate Items -->
+        <div class="certificate__item" onclick="showModal('Data Analyst and Visualization', 'from Accenture', './assets/img/IMG-20241125-WA0018.jpg', 'https://logos-world.net/wp-content/uploads/2020/06/Accenture-Emblem.png')">
+            <div class="certificate__content">
+                <img src="https://logos-world.net/wp-content/uploads/2020/06/Accenture-Emblem.png" alt="Accenture Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Data Analyst and Visualization</h3>
+                    <p>Accenture</p>
                 </div>
-
             </div>
-        </section>
+        </div>
 
+        <div class="certificate__item" onclick="showModal('Gemini for Google WorkSpace', 'from Google Cloud', './assets/img/IMG-20241125-WA0016.jpg', 'https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Symbol.png')">
+            <div class="certificate__content">
+                <img src="https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Symbol.png" alt="Google Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Gemini for Google WorkSpace</h3>
+                    <p>Google Cloud</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate__item" onclick="showModal('Getting Started with Machine Learning Algorithms', 'from Simpli Learn', './assets/img/Machine_Learning_Skillup.jpg', 'https://educationspeaks.org/wp-content/uploads/2023/01/simplilearn.jpg')">
+            <div class="certificate__content">
+                <img src="https://educationspeaks.org/wp-content/uploads/2023/01/simplilearn.jpg" alt="SimpliLearn Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Getting Started with Machine Learning Algorithms</h3>
+                    <p>SimpliLearn</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate__item" onclick="showModal('Master Swift and API Building', 'from GeeksforGeeks', './assets/img/IMG-20241125-WA0014.jpg', 'https://images.yourstory.com/cs/images/companies/119169043101580097794440231905187057223611079n-1617083628661.png')">
+            <div class="certificate__content">
+                <img src="https://images.yourstory.com/cs/images/companies/119169043101580097794440231905187057223611079n-1617083628661.png" alt="GeeksforGeeks Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Master Swift and API Building</h3>
+                    <p>GeeksforGeeks</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate__item" onclick="showModal('Google Analytics', 'from Great Learning', './assets/img/IMG-20241125-WA0016.jpg', 'https://play-lh.googleusercontent.com/__khQwKnFNT-XLg_3jEZiL2fAAzEunNoPh_Q8qd-c3Hq9kX_KL0vR7vnWOM6vBZCdBy0')">
+            <div class="certificate__content">
+                <img src="https://play-lh.googleusercontent.com/__khQwKnFNT-XLg_3jEZiL2fAAzEunNoPh_Q8qd-c3Hq9kX_KL0vR7vnWOM6vBZCdBy0" alt="Great Learning Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Google Analytics</h3>
+                    <p>Great Learning</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate__item" onclick="showModal('Java Full Stack Development', 'from JSpiders', '', 'https://jspiders.com/_nuxt/img/logo_jspiders.3b552d0.png')">
+            <div class="certificate__content">
+                <img src="https://jspiders.com/_nuxt/img/logo_jspiders.3b552d0.png" alt="JSpiders Logo" class="certificate__logo">
+                <div class="certificate__details">
+                    <h3>Java Full Stack Development</h3>
+                    <p>JSpiders</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                
+<!-- Modal Structure -->
+<div id="certificateModal" class="modal">
+    <div class="modal__content">
+        <span class="modal__close" onclick="closeModal()">&times;</span>
+        <img id="modalLogo" class="modal__logo" alt="Certificate Logo">
+        <h3 id="modalTitle" class="modal__title"></h3>
+        <p id="modalText" class="modal__text"></p>
+        <img id="modalImage" class="modal__image" alt="Certificate Image">
+    </div>
+</div>
         <!--=============== SERVICES ===============-->
         <section class="services section">
             <span class="section__subtitle">My Experience</span>
