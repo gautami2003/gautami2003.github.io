@@ -365,22 +365,33 @@
                     <span class="section__subtitle">Achievements</span>
                     <h2 class="section__title">Certificates</h2>
 
-                    <div class="grid-certificate">
-                        <div class="card-certificate">
-                            <div class="card-content">
-                                <div class="icon">
-                                    <img src="https://img.icons8.com/ios/452/certificate.png" alt="Certificate Icon" />
-                                </div>
-                                <h3 class="card-title">Excellence Award - SSP Classes</h3>
-                                <p class="card-date">Awarded: 2024</p>
-                                <p class="card-summary">Recognized for outstanding academic performance and dedication in SSP Classes.</p>
-                                <div class="card-footer">
-                                    <a href="certificate-link.com" class="view-certificate" target="_blank">View Certificate</a>
-                                </div>
-                            </div>
+                    <div class="certificates__container">
+                        <!-- Certificate Items -->
+                        <div class="certificate__item" onclick="showModal('Data Analyst and Visualization', './assets/img/IMG-20241125-WA0018.jpg')">
+                            Data Analyst and Visualization
+                        </div>
+                        <div class="certificate__item" onclick="showModal('Gemini for Google WorkSpace', './assets/img/IMG-20241125-WA0016.jpg')">
+                            Gemini for Google WorkSpace
+                        </div>
+                        <div class="certificate__item" onclick="showModal('Master Swift and API Building', './images/ml-algorithms.png')">
+                            Getting Started with Machine Learning Algorithms
+                        </div>
+                        <div class="certificate__item" onclick="showModal('Java Full Stack Development', './images/java-fullstack.png')">
+                            Java Full Stack Development
                         </div>
                     </div>
                 </section>
+
+                <!-- Modal for Certificates -->
+                <div class="modal" id="certificateModal">
+                    <div class="modal__content">
+                        <span class="modal__close" onclick="closeModal()">×</span>
+                        <h3 class="modal__title" id="modalTitle"></h3>
+                        <img id="modalImage" class="modal__image" src="" alt="Certificate Preview">
+                        <p id="modalText" class="modal__text"></p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -390,7 +401,6 @@
             <h2 class="section__title">What I Provide</h2>
 
             <div class="services__container container grid">
-
                 <!-- Data Scientist Card -->
                 <div class="services__card">
                     <h3 class="services__title">Data Scientist</h3>
@@ -398,13 +408,11 @@
 
                     <div class="services__modal">
                         <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
+                            <i class="bx bx-x services__modal-close"></i>
                             <h3 class="services__modal-title">Data Scientist</h3>
                             <p class="services__modal-description">
                                 Over 3 years of hands-on experience transforming complex data into actionable insights. Equipped with a deep theoretical foundation and a commitment to delivering exceptional results.
                             </p>
-
                             <ul class="services__modal-list">
                                 <li class="services__modal-item">
                                     <i class="bx bx-check services__modal-icon"></i>
@@ -412,21 +420,18 @@
                                         Perform meticulous data cleaning and preprocessing to ensure high-quality, reliable data.
                                     </p>
                                 </li>
-
                                 <li class="services__modal-item">
                                     <i class="bx bx-check services__modal-icon"></i>
                                     <p class="services__modal-info">
                                         Build and maintain collaborative relationships, fostering trust and understanding with clients and stakeholders.
                                     </p>
                                 </li>
-
                                 <li class="services__modal-item">
                                     <i class="bx bx-check services__modal-icon"></i>
                                     <p class="services__modal-info">
                                         Create advanced predictive models to uncover patterns and forecast trends with precision.
                                     </p>
                                 </li>
-
                                 <li class="services__modal-item">
                                     <i class="bx bx-check services__modal-icon"></i>
                                     <p class="services__modal-info">
@@ -438,151 +443,10 @@
                     </div>
                 </div>
 
-                <!-- AI Engineer Card -->
-                <div class="services__card">
-                    <h3 class="services__title">AI Engineer</h3>
-                    <span class="services__bottom">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">AI Engineer</h3>
-                            <p class="services__modal-description">
-                                Expertise in building AI solutions, with a strong focus on machine learning algorithms, neural networks, and deployment in real-world applications.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Develop and optimize machine learning models to solve complex business challenges.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Design and implement deep learning architectures for image, text, and speech recognition.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Streamline the deployment of AI models into production environments, ensuring scalability and performance.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Collaborate with cross-functional teams to integrate AI into existing systems.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Analyst Card -->
-                <div class="services__card">
-                    <h3 class="services__title">Data Analyst</h3>
-                    <span class="services__bottom">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">Data Analyst</h3>
-                            <p class="services__modal-description">
-                                Skilled in extracting insights from data to drive informed decisions, with a strong background in statistical analysis and data visualization.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Analyze large datasets to identify trends, patterns, and key insights.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Build dashboards and reports to visualize data in meaningful ways.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Conduct exploratory data analysis to support strategic decision-making.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Use SQL, Python, and Excel to manage and query data for streamlined insights.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UI/UX Designer Card -->
-                <div class="services__card">
-                    <h3 class="services__title">UI/UX Designer</h3>
-                    <span class="services__bottom">See more <i class="bx bx-right-arrow-alt services__icon"></i></span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">UI/UX Designer</h3>
-                            <p class="services__modal-description">
-                                Passionate about creating user-friendly and visually engaging interfaces that enhance user experience.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Design intuitive and responsive interfaces across multiple devices.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Conduct user research and testing to improve design based on user feedback.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Utilize design tools such as Figma, Adobe XD, and Sketch for high-quality mockups.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class="bx bx-check services__modal-icon"></i>
-                                    <p class="services__modal-info">
-                                        Collaborate with developers to ensure seamless design implementation.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!-- Add other cards here in similar structure (e.g., AI Engineer, Data Analyst, UI/UX Designer) -->
 
             </div>
         </section>
-
-
 
 
         <!--=============== WORK ===============-->

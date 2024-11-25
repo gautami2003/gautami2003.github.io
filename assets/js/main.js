@@ -108,9 +108,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startScrolling();
 });
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
+function showModal(title, imgPath) {
+    const modal = document.getElementById("certificateModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImage = document.getElementById("modalImage");
+    const modalText = document.getElementById("modalText");
 
+    modal.style.display = "flex";
+    modalTitle.innerText = title;
+
+    if (imgPath) {
+        modalImage.style.display = "block";
+        modalImage.src = imgPath;
+        modalText.style.display = "none";
+    } else {
+        modalImage.style.display = "none";
+        modalText.style.display = "block";
+        modalText.innerText = "Certificate image not available.";
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById("certificateModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modal.style.display = "none";
+    modalImage.src = "";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById("certificateModal");
+    if (event.target === modal) {
+        closeModal();
+    }
+};
 /*=============== LIGHT DARK THEME ===============*/
 
 
