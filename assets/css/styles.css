@@ -189,7 +189,6 @@ img {
 
 .grid {
     display: grid;
-    gap: 1.25rem;
 }
 
 .main {
@@ -672,10 +671,7 @@ img {
 
 
 /*=============== SERVICES ===============*/
-
-
 /* General card styling */
-
 .services__card {
     background-color: var(--container-color);
     padding: 3rem 1.5rem 1.5rem;
@@ -683,49 +679,41 @@ img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Optional for better visuals */
     text-align: center;
+    margin: 1rem; /* Adds space between cards */
 }
 
-
 /* Container styles */
-
 .services__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive grid */
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Automatically adjust number of columns */
     padding-top: 1rem;
     margin: 2rem;
 }
 
+/* Mobile View: Show two cards per row */
+@media (max-width: 768px) {
+    .services__container {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        padding: 1rem; /* Adjust padding for mobile */
+        margin: 1rem; /* Add margin around the container */
+    }
 
-/* Title styling */
+    /* Adjust card padding and margin for mobile */
+    .services__card {
+        padding: 2rem 1rem; /* Adds space inside the card */
+        margin: 1rem; /* Adds space between cards */
+    }
 
-.services__title {
-    font-size: var(--h3-font-size);
-    margin-bottom: 2.5rem;
-    color: var(--text-color);
+    .services__title {
+        font-size: var(--h3-font-size); /* Original font size for title */
+    }
+
+    .services__bottom {
+        font-size: var(--small-font-size); /* Original font size for button text */
+    }
 }
-
-
-/* Button styling */
-
-.services__bottom {
-    color: var(--first-color);
-    font-size: var(--small-font-size);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
-}
-
-.services__bottom:hover .services__icon {
-    transform: translateX(0.25rem);
-    transition: 0.3s;
-}
-
 
 /* Modal styling */
-
 .services__modal {
     position: fixed;
     inset: 0;
@@ -746,31 +734,29 @@ img {
 .services__modal-content {
     position: relative;
     background-color: var(--body-color);
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.5rem; /* Padding around modal content */
     border-radius: 1.5rem;
     max-width: 600px;
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem; /* Adds margin around modal content */
 }
 
-
 /* Modal title and description */
-
 .services__modal-title {
-    font-size: var(--h3-font-size);
+    font-size: var(--h3-font-size); /* Original font size for modal title */
     color: var(--first-color);
     margin-bottom: 1rem;
 }
 
 .services__modal-description {
-    font-size: var(--small-font-size);
+    font-size: var(--small-font-size); /* Original font size for description */
     margin-bottom: 2rem;
     line-height: 1.6;
+    margin-top: 1rem; /* Margin top for separation */
 }
 
-
 /* Modal list */
-
 .services__modal-list {
     display: grid;
     gap: 0.75rem;
@@ -789,9 +775,7 @@ img {
     color: var(--first-color);
 }
 
-
 /* Close button */
-
 .services__modal-close {
     position: absolute;
     top: 1rem;
@@ -805,7 +789,6 @@ img {
 .services__modal-close:hover {
     color: var(--hover-color);
 }
-
 
 /*=============== WORK ===============*/
 
