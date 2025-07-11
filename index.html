@@ -239,42 +239,58 @@
                     <div class="container1" style="background-image: url('background-image.jpg');">
                         <!-- Education 1 -->
                         <input type="radio" name="education" id="edu1" checked>
-                        <label for="edu1" class="card">
-                            <div class="icon">Masters</div>
-                            <span>2023–2025</span>
-                            <span>Tap to see more</span>
+                       <label for="edu1" class="card">
+    <div class="icon">Masters</div>
+    <span>2023–2025</span>
+    <span>Tap to see more</span>
 
-                                <div class="text-container">
-                                    <h4>Master's in Data Science and Big Data Analytics</h4>
-                                    <p>This degree has offered me thrilling and innovative tasks to make everyday better with data.</p><br>
+    <div class="text-container">
+        <h4>Master's in Data Science and Big Data Analytics</h4>
+        <p>This degree has offered me thrilling and innovative tasks to make everyday better with data.</p><br>
 
-                                    <!-- Tech Icons -->
-                                    <div class="icons">
-                                        <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
-                                        <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
-                                        <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" style="width: 40px;">
-                                        <img src="https://img.icons8.com/color/48/r--v1.png" alt="R" style="width: 40px;">
-                                    </div>
+        <!-- Tech Icons -->
+        <div class="icons">
+            <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
+            <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
+            <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" style="width: 40px;">
+            <img src="https://img.icons8.com/color/48/r--v1.png" alt="R" style="width: 40px;">
+        </div>
 
-                                    <!-- Certificate trigger card (modal launcher) -->
-                                    <div class="certificates__container" style="margin-top: 20px;">
-                                        <div class="certificate__item" onclick="showModal(
-                                            'Design Thinking and Entrepreneurial Mindset Workshop',
-                                            'from SDBI',
-                                            './assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg',
-                                            './assets/img/sdbi-logo.png')">
+        <!-- Certificate trigger card (modal launcher) -->
+        <div class="certificates__container" style="margin-top: 20px;">
+            <!-- SDBI Workshop -->
+            <div class="certificate__item" onclick="showModal(
+                'Design Thinking and Entrepreneurial Mindset Workshop',
+                'from SDBI',
+                './assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg',
+                './assets/img/sdbi-logo.png')">
+                <div class="certificate__content" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="./assets/img/sdbi logo.png" alt="SDBI Logo" class="certificate__logo" style="width: 40px;">
+                    <div class="certificate__details">
+                        <h5>Design Thinking and Entrepreneurial Mindset Workshop</h5>
+                        <p style="margin: 0;">SDBI</p>
+                    </div>
+                </div>
+            </div>
 
-                                            <div class="certificate__content" style="display: flex; align-items: center; gap: 12px;">
-                                                <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo" style="width: 40px;">
-                                                <div class="certificate__details">
-                                                    <h5>Design Thinking and Entrepreneurial Mindset Workshop</h5>
-                                                    <p style="margin: 0;">SDBI</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
+            <!-- 1st Place Certificate -->
+            <div class="certificate__item" onclick="showModal(
+                '1st Place – Academic Challenge',
+                'Awarded by SDBI',
+                './assets/img/1st place.jpg',
+                './assets/img/sdbi-logo.png')">
+                <div class="certificate__content" style="display: flex; align-items: center; gap: 12px; margin-top: 10px;">
+                    <img src="./assets/img/sdbi logo.png" alt="SDBI Logo" class="certificate__logo" style="width: 40px;">
+                    <div class="certificate__details">
+                        <h5>1st Place – Academic Challenge</h5>
+                        <p style="margin: 0;">SDBI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</label>
+
 
 
                         <!-- Education 2 -->
