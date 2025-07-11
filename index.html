@@ -241,19 +241,41 @@
                         <input type="radio" name="education" id="edu1" checked>
                         <label for="edu1" class="card">
                             <div class="icon">Masters</div>
-                            <span>2023-Present</span>
+                            <span>2023–2025</span>
                             <span>Tap to see more</span>
-                            <div class="text-container">
-                                <h4>Master's in Data Science and Big Data Analytics</h4>
-                                <p>This degree has offered me thrilling and innovative tasks to make everyday better with data.</p><br>
-                                <div class="icons">
-                                    <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
-                                    <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
-                                    <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">
-                                    <img src="https://img.icons8.com/color/48/r--v1.png" alt="R">
+
+                                <div class="text-container">
+                                    <h4>Master's in Data Science and Big Data Analytics</h4>
+                                    <p>This degree has offered me thrilling and innovative tasks to make everyday better with data.</p><br>
+
+                                    <!-- Tech Icons -->
+                                    <div class="icons">
+                                        <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
+                                        <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
+                                        <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" style="width: 40px;">
+                                        <img src="https://img.icons8.com/color/48/r--v1.png" alt="R" style="width: 40px;">
+                                    </div>
+
+                                    <!-- Certificate trigger card (modal launcher) -->
+                                    <div class="certificates__container" style="margin-top: 20px;">
+                                        <div class="certificate__item" onclick="showModal(
+                                            'Design Thinking and Entrepreneurial Mindset Workshop',
+                                            'from SDBI',
+                                            './assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg',
+                                            './assets/img/sdbi-logo.png')">
+
+                                            <div class="certificate__content" style="display: flex; align-items: center; gap: 12px;">
+                                                <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo" style="width: 40px;">
+                                                <div class="certificate__details">
+                                                    <h5>Design Thinking and Entrepreneurial Mindset Workshop</h5>
+                                                    <p style="margin: 0;">SDBI</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </label>
+                            </label>
+
 
                         <!-- Education 2 -->
                         <input type="radio" name="education" id="edu2">
@@ -280,12 +302,13 @@
                     <h3>Experience</h3>
 
                     <div class="container1" style="background-image: url('background-image.jpg');">
+                       
                         <!-- Experience 1 -->
                         <input type="radio" name="experience" id="exp1" checked>
                         <label for="exp1" class="card">
                             <div class="icon">Data Analyst</div>
                             <span>Full Time Job</span>
-                            <span>July 2024-Present</span>
+                            <span>March 2025-Present</span>
                             <span>Tap to see more</span>
                             <div class="text-container">
                                 <h4>Data Analyst</h4>
@@ -296,36 +319,45 @@
                             </div>
                         </label>
 
-                        <!-- Experience 2 -->
-                        <input type="radio" name="experience" id="exp2">
-                        <label for="exp2" class="card">
-                            <div class="icon">Data Analyst</div>
-                            <span>Internship</span>
-                            <span>May 2024- July 2024</span>
-                            <span>Tap to see more</span>
-                            <div class="text-container">
-                                <h4>Data Analyst</h4>
-                                <p>~ Chakraview Solutions Private Limited</p><BR>
-                                <div class="icons">
-                                    <img src="assets/img/CHAKRAVIEW LOGO.png" alt="Charaview">
-                                </div>
-                            </div>
-                        </label>
+                        <!-- Experience 2: Part-Time -->
+                            <input type="radio" name="experience" id="exp2">
+                            <label for="exp2" class="card">
+                                <div class="icon">Data Analyst</div>
+                                <span>Part-Time</span>
+                                <span>July 2024 – March 2025</span>
+                                <span>Tap to see more</span>
 
-                        <!-- Experience 3 -->
-                        <input type="radio" name="experience" id="exp3">
-                        <label for="exp3" class="card">
-                            <div class="icon">Cosmic Intern</div>
-                            <span>March 2024-June 2024</span>
-                            <span>Tap to see more</span>
-                            <div class="text-container">
-                                <h4>Cosmic 365</h4>
-                                <p>~ Chakraview Solutions Private Limited</p><br>
-                                <div class="icons">
-                                    <img src="assets/img/cosmic365-ai.jpg" alt="Charaview">
+                                <div class="text-container">
+                                    <h4>Data Analyst</h4>
+                                    <p>~ Chakraview Solutions Private Limited</p><br>
+                                    
+                                    <div class="icons">
+                                        <img src="assets/img/CHAKRAVIEW LOGO.png" alt="Chakraview" style="width: 50px;"><br><br>
+                                        <a href="assets/Experience Letter - Gautami.pdf" target="_blank" style="text-decoration: underline; color: #007BFF;">📄 View Experience Letter</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </label>
+                            </label>
+
+                            <!-- Experience 3: Internship -->
+                            <input type="radio" name="experience" id="exp3">
+                            <label for="exp3" class="card">
+                                <div class="icon">Data Analyst</div>
+                                <span>Internship</span>
+                                <span>May 2024 – July 2024</span>
+                                <span>Tap to see more</span>
+
+                                <div class="text-container">
+                                    <h4>Data Analyst (Intern)</h4>
+                                    <p>~ Chakraview Solutions Private Limited</p><br>
+                                    
+                                    <div class="icons">
+                                        <img src="assets/img/CHAKRAVIEW LOGO.png" alt="Chakraview" style="width: 50px;"><br><br>
+                                        <a href="assets/internship_certificate.pdf" target="_blank" style="text-decoration: underline; color: #007BFF;">📄 View Internship Certificate</a>
+                                    </div>
+                                </div>
+                            </label>
+
+
                     </div>
                 </div>
             </div>
@@ -357,11 +389,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- Certificate Section -->
-                <section class="certificate section">
-                    <span class="section__subtitle">Achievements</span>
-                    <h2 class="section__title">Certificates</h2>
-
+    
+                        
                     <div class="certificates__container">
                         <!-- Certificate Items -->
                         <div class="certificate__item" onclick="showModal('Data Analyst and Visualization', 'from Accenture', './assets/img/IMG-20241125-WA0018.jpg', 'https://logos-world.net/wp-content/uploads/2020/06/Accenture-Emblem.png')">
