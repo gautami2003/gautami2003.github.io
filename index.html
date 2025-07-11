@@ -257,35 +257,43 @@
         </div>
 
         <!-- Certificates Section -->
-       <div class="certificates__container" style="
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 200px;            /* Adjust height as needed */
-    overflow-y: auto;             /* Enable vertical scrolling */
-    padding-right: 5px;           /* Add space for scrollbar */
-    scrollbar-width: thin;        /* For Firefox */
-">
-<!-- Certificate 1 -->
-<div class="certificate-block">
-    <img src="./assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg" alt="Design Thinking Workshop">
-    <h5>
-        Design Thinking and Entrepreneurial Mindset Workshop 
-        <span class="tap-glow">Tap</span>
-    </h5>
+ <!-- SDBI Logo Trigger -->
+<div style="text-align: center; margin-bottom: 10px;">
+    <img src="./assets/img/sdbi-logo.png" 
+         alt="SDBI Logo" 
+         id="sdbiLogo" 
+         style="width: 80px; cursor: pointer;" 
+         onclick="toggleCertificates()">
+</div>
+<!-- SDBI Logo with Glow and Tap -->
+<div id="sdbiLogoContainer" style="text-align: center; margin-bottom: 10px;">
+    <img src="./assets/img/sdbi-logo.png" 
+         alt="SDBI Logo" 
+         id="sdbiLogo"
+         class="tap-glow"
+         style="width: 80px; cursor: pointer;"
+         onclick="showCertificates()">
+    <div style="font-size: 0.85rem; color: #888;">Tap</div>
 </div>
 
-<!-- Certificate 2 -->
-<div class="certificate-block">
-    <img src="./assets/img/1st-place.jpg" alt="1st Place Certificate">
-    <h5>
-        1st Place – Academics 
-        <span class="tap-glow">Tap</span>
-    </h5>
+<!-- Hidden Certificates Section -->
+<div id="certificatesContainer" style="display: none; text-align: center; gap: 15px; flex-direction: column;">
+    <div class="certificate-block">
+        <img src="./assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg" 
+             alt="Design Thinking Workshop" 
+             style="max-width: 90%; border-radius: 10px; border: 1px solid #ccc;">
+        <h5>Design Thinking and Entrepreneurial Mindset Workshop</h5>
+    </div>
+
+    <div class="certificate-block">
+        <img src="./assets/img/1st-place.jpg" 
+             alt="1st Place Certificate" 
+             style="max-width: 90%; border-radius: 10px; border: 1px solid #ccc;">
+        <h5>1st Place – Academics</h5>
+    </div>
 </div>
 
-</div>
+
 
     </div>
 </label>
