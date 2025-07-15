@@ -1200,18 +1200,20 @@ img {
 
 
 /* General Grid Styling */
-
 .grid-education {
-    display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 20px;
     align-items: start;
     justify-items: center;
-    margin: 0 auto;
-    width: 100%;
+    
     max-width: 1200px;
-    padding: 0 1rem;
+    width: 100%;
+    
+    margin: 0 auto; /* ✅ Centers the grid horizontally */
+    padding: 2rem;   /* ✅ Adds space on all sides */
+    box-sizing: border-box;
 }
+
 
 .container-education {
     margin: 1.5rem;
