@@ -252,36 +252,51 @@
     <p>This degree has offered me thrilling and innovative tasks to make everyday better with data.</p><br>
 
     <!-- Tech Icons -->
-    <div class="icons" style="margin-bottom: 20px;">
-      <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop" style="width: 40px;">
-      <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau" style="width: 40px;">
-      <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" style="width: 40px;">
-      <img src="https://img.icons8.com/color/48/r--v1.png" alt="R" style="width: 40px;">
+   <div class="icons-section">
+  <!-- Tech Icons -->
+  <div class="icons animated-icons">
+    <img src="https://img.icons8.com/color/48/hadoop-distributed-file-system.png" alt="Hadoop">
+    <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau">
+    <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">
+    <img src="https://img.icons8.com/color/48/r--v1.png" alt="R">
+  </div>
 
-
-      <div class="certificates__container">
-                        <!-- Certificate Items -->
-                        <div class="certificate__item" onclick="showModal('1st Place – Academics', 'from SDBI', './assets/img/1st place.jpg', './assets/img/sdbi-logo.png')">
-                            <div class="certificate__content">
-                                <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo">
-                                <div class="certificate__details">
-                                    <h3>1st Place – Academics</h3>
-                                    <p>School of Data Science and Business Intelligence</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="certificate__item" onclick="showModal('Design Thinking Workshop', 'from SDBI', './assets/img/IMG-20241125-WA0016.jpg',  './assets/img/sdbi-logo.png')">
-                            <div class="certificate__content">
-                                <img src= './assets/img/sdbi-logo.png' alt="SDBI Logo" class="certificate__logo">
-                                <div class="certificate__details">
-                                    <h3>Design Thinking and Entrepreneurial Mindset Workshop</h3>
-                                    <p>School of Data Science and Business Intelligence</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Certificate Items -->
+<div class="certificates__container fade-in-up">
+  <div class="certificate__item" onclick="showCertificatesModal()">
+    <div class="certificate__content">
+      <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo">
+      <div class="certificate__details">
+        <h3>Achievements</h3>
+        <p>School of Data Science and Business Intelligence</p>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Certificates Modal -->
+<div id="certificatesModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeCertificatesModal()">&times;</span>
+
+    <div class="modal-certificates">
+      <div class="modal-certificate">
+        <img src="./assets/img/1st place.jpg" alt="1st Place – Academics">
+        <h4>1st Place – Academics</h4>
+        <p>School of Data Science and Business Intelligence</p>
+      </div>
+
+      <div class="modal-certificate">
+        <img src="./assets/img/IMG-20241125-WA0016.jpg" alt="Design Thinking Workshop">
+        <h4>Design Thinking and Entrepreneurial Mindset Workshop</h4>
+        <p>School of Data Science and Business Intelligence</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 
 
   </div>
@@ -773,6 +788,23 @@
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
+<script>
+  function showCertificatesModal() {
+    document.getElementById("certificatesModal").style.display = "block";
+  }
+
+  function closeCertificatesModal() {
+    document.getElementById("certificatesModal").style.display = "none";
+  }
+
+  // Optional: close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById("certificatesModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 
     <!--=============== SWIPER JS ===============-->
     <script src=""></script>
