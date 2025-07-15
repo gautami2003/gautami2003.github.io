@@ -777,13 +777,9 @@
     <script src=""></script>
 <script>
   function toggleCertificates() {
-  const content = document.getElementById("certificatesContent");
-  if (content.style.display === "none" || content.style.display === "") {
-    content.style.display = "block";
-  } else {
-    content.style.display = "none";
+    const content = document.getElementById("certificatesContent");
+    content.style.display = content.style.display === "none" ? "block" : "none";
   }
-}
 </script>
 
     <!--=============== SWIPER JS ===============-->
