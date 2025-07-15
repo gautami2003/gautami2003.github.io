@@ -794,17 +794,18 @@ img {
     padding: 0.85rem;
   }
 
-  .submit-button {
+ .submit-button {
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
     width: 100%;
+    margin-bottom: 2rem;
   }
 
   .submit-button .arrow {
     margin-left: 0.3rem;
   }
 
-  
+
     .services__container {
         grid-template-columns: repeat(2, 1fr);
         /* Two cards per row */
