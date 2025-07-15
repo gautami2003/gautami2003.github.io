@@ -1334,7 +1334,6 @@ input[type="radio"]:not(:checked)+label .text-container {
 @media (max-width: 768px) {
     .grid-education {
         grid-template-columns: 1fr;
-        margin: 1rem;
         justify-items: center;
     }
     .container-education {
