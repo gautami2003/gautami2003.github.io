@@ -259,30 +259,18 @@
       <img src="https://img.icons8.com/color/48/r--v1.png" alt="R" style="width: 40px;">
 
 
-     <div class="certificates__container">
-  <div class="certificate__item" onclick="toggleCertificates()">
-    <div class="certificate__content">
-      <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo">
-      <div class="certificate__details">
-        <h3>Tap to View Certificates</h3>
-        <p>School of Data Science and Business Intelligence</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hidden Content -->
-  <div id="certificatesContent" style="display: none; margin-top: 1rem;">
-    <div class="certificate-block">
-      <h4>1st Place – Academics</h4>
-      <img src="./assets/img/1st place.jpg" alt="1st Place" style="max-width: 100%; border-radius: 8px;">
-    </div>
-    <div class="certificate-block" style="margin-top: 1.5rem;">
-      <h4>Design Thinking & Entrepreneurial Mindset</h4>
-      <img src="./assets/img/WhatsApp Image 2025-04-15 at 16.08.15_555aa0b0.jpg" alt="Workshop Certificate" style="max-width: 100%; border-radius: 8px;">
-    </div>
-  </div>
-</div>
-
+      <div class="certificates__container">
+                        <!-- Certificate Items -->
+                        <div class="certificate__item" onclick="showModal('1st Place – Academics', 'from SDBI', './assets/img/1st place.jpg', './assets/img/sdbi-logo.png')">
+                            <div class="certificate__content">
+                                <img src="./assets/img/sdbi-logo.png" alt="SDBI Logo" class="certificate__logo">
+                                <div class="certificate__details">
+                                    <h3>Achievements</h3>
+                                    <p>School of Data Science and Business Intelligence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     </div>
 
 
@@ -775,12 +763,6 @@
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
-<script>
-  function toggleCertificates() {
-    const content = document.getElementById("certificatesContent");
-    content.style.display = content.style.display === "none" ? "block" : "none";
-  }
-</script>
 
     <!--=============== SWIPER JS ===============-->
     <script src=""></script>
