@@ -9,8 +9,11 @@
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <!--=============== BOXICONS ===============-->
+    <!--=============== BOXICONS ===============--><!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!--=============== SWIPER CSS ===============-->
@@ -768,33 +771,34 @@
 
         </section>
 
-        <!--=============== CONTACT ===============-->
-        <section class="contact section" id="contact">
-            <h2 class="section__subtitle">Contact</h2>
-            <h2 class="section__title">Get in Touch</h2>
-            <div class="contact-container">
-                <!-- Contact Form Section -->
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
-                    <div class="contact-left-title">
-                        <hr>
-                    </div>
-                    <input type="hidden" name="access_key" value="eaa79757-bd03-402b-b284-735ff8d3bd43">
-                    <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-                    <input type="text" name="subject" placeholder="Subject" class="contact-inputs" required>
-                    <textarea name="message" placeholder="Your Message" class="contact-inputs message-box" required></textarea>
-                    <button type="submit" class="submit-button">
-                        Submit
-                        <img src="assets/img/arrow_icon.png" alt="Arrow icon" class="button-icon">
-                    </button>
-                </form>
+   <!--=============== CONTACT ===============-->
+<section class="contact section" id="contact">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section__subtitle">Contact</h2>
+    <h2 class="section__title">Get in Touch</h2>
 
-                <!-- Right Image Section -->
-                <div class="contact-right">
-                    <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/37215/laptop-computer-woman-girl-clipart-md.png" alt="Contact illustration" class="contact-image">
-                </div>
-            </div>
-        </section>
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="100">
+      <input type="hidden" name="access_key" value="eaa79757-bd03-402b-b284-735ff8d3bd43">
+
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="subject" placeholder="Subject" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">
+        Submit <span class="arrow">→</span>
+      </button>
+    </form>
+  </div>
+</section>
 
     </main>
 
@@ -808,6 +812,14 @@
 
     <!--=============== SWIPER JS ===============-->
     <script src=""></script>
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 
     <!--=============== MIXITUP FILTER ===============-->
     <script src=""></script>
