@@ -1302,52 +1302,13 @@ img {
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .text-container {
-    max-height: none; /* always visible, change if toggling needed */
-    opacity: 1;
-    overflow: visible;
-    background: #1e1e2f;  /* dark blackish-purple background */
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(128, 0, 255, 0.5); /* purple glow */
-    padding: 20px;
-    margin-top: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: #dcd6f7; /* light purple text */
-    letter-spacing: 0.4px;
-    line-height: 1.6;
-    transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.text-container:hover {
-    box-shadow: 0 8px 30px rgba(180, 0, 255, 0.8);
-    background: #2a2250; /* slightly lighter purple on hover */
-}
-
-.text-container h4 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    color: #b388ff; /* bright purple heading */
-    text-shadow: 0 0 6px #a17cff;
-}
-
-.text-container p {
-    font-weight: 400;
-    font-size: 1rem;
-    margin: 0;
-    color: #c9c1ff; /* softer purple for paragraph */
-}
-.text-container {
-  max-height: 0;
-  opacity: 0;
-  padding: 0 20px;
-  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
-}
-
-.text-container.open {
-  max-height: 400px; /* or enough to fit your content */
-  opacity: 1;
-  padding: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    padding: 0 15px;
 }
 
 input[type="radio"] {
