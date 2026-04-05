@@ -305,60 +305,38 @@ img {
     transition: background-color 0.4s, box-shadow 0.4s;
     opacity: 0.9;
 }
-
-.nav {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav__logo {
-    color: var(--first-color-alt);
-    font-weight: var(--font-medium);
-    transition: color .4s;
-}
-
-.nav__logo:hover {
-    color: var(--first-color-alt);
-}
-
 .nav__menu {
     position: fixed;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    /* Centers the element horizontally */
-    background-color: hsl(var(--second-hue), 32%, 16%, .8);
-    width: 90%;
-    max-width: 1000px;
-    /* Limits the width */
-    border-radius: 4rem;
-    padding: 1rem 2.25rem;
+
+    width: auto;              /* ❌ remove 90% width */
+    max-width: none;
+
+    padding: 0.4rem 1rem;     /* ❌ reduce height */
+    border-radius: 2rem;      /* ❌ smaller curve */
+
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
+
+    display: inline-block;    /* ✅ shrink to content */
 }
 
+/* FIX SPACING */
 .nav__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;  /* ❌ remove space-between */
     align-items: center;
+    gap: 0.8rem;              /* ✅ clean spacing */
 }
 
+/* MAKE ICONS SMALL */
 .nav__link {
-    color: var(--text-color);
-    font-size: 1.25rem;
-    padding: .4rem;
-    display: flex;
-    border-radius: 5rem;
-    transition: color 0.3s, background-color 0.3s;
+    font-size: 1rem;          /* ❌ reduce from 1.25rem */
+    padding: 0.35rem;
+    border-radius: 50%;
 }
-
-.nav__link:hover {
-    color: var(--first-color);
-    background-color: hsla(var(--first-hue), 100%, 95%, 0.15);
-    transition: color 0.3s;
-}
-
 
 /* Active link */
 
@@ -378,168 +356,115 @@ img {
 /*=============== HOME ===============*/
 
 .home__container {
-    position: relative;
-    row-gap: 4.5rem;
-    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home__data {
     text-align: center;
 }
 
-.home__greeting,
-.home__education {
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-}
-
+/* TEXT */
 .home__greeting {
-    display: block;
-    color: var(--title-color);
-    margin-bottom: .25rem;
-}
-
-.home__education {
-    columns: var(--text-color);
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
 }
 
 .home__name {
-    font-size: var(--biggest-font-size);
+    font-size: 2rem;
+    margin: 5px 0;
 }
 
-.home__img {
-    width: 160px;
+.home__education {
+    font-size: 1rem;
+    color: var(--first-color);
+    margin-bottom: 15px;
 }
 
+/* IMAGE */
 .home__handle {
-    justify-self: center;
-    width: 162px;
+    width: 160px;
     height: 180px;
-    background: linear-gradient(180deg, hsla(var(--first-hue), var(--sat), var(--lig), 1), hsla(var(--first-hue), var(--sat), var(--lig), .2));
-    border-radius: 10rem 10rem 1rem 1rem;
+    margin: 10px auto;
+
+    background: linear-gradient(
+        180deg,
+        hsla(var(--first-hue), var(--sat), var(--lig), 1),
+        hsla(var(--first-hue), var(--sat), var(--lig), .2)
+    );
+
+    border-radius: 100px 100px 20px 20px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
-    margin-bottom: 1rem;
 }
 
-.home__buttons {
+.home__img {
+    width: 140px;
+}
+
+/* ✅ SOCIAL ICONS FIXED */
+.home__social {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.home__social,
-.home__scroll {
-    position: absolute;
-}
-
-.home__social {
-    bottom: 0.1rem;
-    left: 0;
-    display: grid;
-    row-gap: .7rem;
+    gap: 12px;
+    margin: 15px 0;
 }
 
 .home__social-link {
-    width: max-content;
+    width: 38px;
+    height: 38px;
     background-color: var(--container-color);
     color: var(--first-color);
-    padding: .25rem;
-    border-radius: .25rem;
+
     display: flex;
-    font-size: 1rem;
-    transition: .4s;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 18px;
+
+    transition: 0.3s;
 }
 
 .home__social-link:hover {
     background-color: var(--first-color);
     color: #fff;
+    transform: translateY(-3px);
 }
 
+/* ❌ REMOVE OLD LINE */
 .home__social::after {
-    content: '';
-    width: 32px;
-    height: 2px;
-    background-color: var(--first-color);
-    transform: rotate(90deg) translate(16px, 3px);
+    display: none;
 }
 
-.home__scroll {
-    color: var(--first-color);
-    right: 0rem;
-    bottom: 4rem;
-    display: grid;
-    row-gap: 2.25rem;
-    justify-items: center;
+/* BUTTONS */
+.home__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
 }
 
-.home__scroll-icon {
-    font-size: 1.25rem;
-}
-
-.home__scroll-name {
-    font-size: var(--smaller-font-size);
-    transform: rotate(-90deg);
-}
-
-
-/* General Button Style */
-
+/* BUTTON STYLE */
 .button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    /* Reduced padding for smaller size */
-    background-color: var(--first-color);
-    color: var(--body-color);
-    font-size: calc(var(--normal-font-size) - 2px);
-    /* Slightly smaller font */
-    font-weight: var(--font-medium);
-    border-radius: 0.5rem;
-    box-shadow: 0 0 5px 3px rgba(138, 43, 226, 0.3);
-    /* Reduced glow */
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    text-decoration: none;
-    /* Remove underline for links */
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 6px;
 }
-
-
-/* Hover Effect */
-
-.button:hover {
-    background-color: var(--first-color-alt);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Subtler shadow on hover */
-    transform: scale(1.02);
-}
-
-
-/* Active Effect */
-
-.button:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    transform: scale(0.98);
-}
-
-
-/* Ghost Button Style (for "Download CV") */
-
 .button-ghost {
-    background-color: transparent;
-    color: var(--first-color);
-    border: 1.5px solid var(--first-color);
-    /* Slightly thinner border */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    background-color: var(--first-color);   /* ✅ purple */
+    color: #fff;                            /* white text */
+    border: none;                           /* remove border */
 }
 
+/* Hover */
 .button-ghost:hover {
-    background-color: var(--first-color);
-    color: var(--body-color);
+    background-color: var(--first-color-alt); /* lighter purple */
+    color: #fff;
 }
-
 
 /*=============== ABOUT ===============*/
 
@@ -1200,50 +1125,6 @@ img {
 
 
 /* General Grid Styling */
-.grid-education {
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 20px;
-    align-items: start;
-    justify-items: center;
-    
-    max-width: 1200px;
-    width: 100%;
-    
-    margin: 0 auto; /* ✅ Centers the grid horizontally */
-    padding: 2rem;   /* ✅ Adds space on all sides */
-    box-sizing: border-box;
-}
-
-
-.container-education {
-    margin: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-    color: var(--first-color);
-    font-weight: 600;
-    text-align: center;
-    max-width: 1200px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
-    background-color: var(--container-color);
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-    max-width: 320px;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin: 1rem 0;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
 
 .card:hover {
     transform: translateY(-5px) scale(1.02);
@@ -1293,9 +1174,20 @@ img {
 }
 
 .icons {
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo & text */
 }
 
+.icons img {
+  width: 40px; /* adjust if needed */
+  height: auto;
+}
+
+.icons h4 {
+  margin: 0;
+  font-size: 16px;
+}
 .card .icons img {
     width: 34px;
     height: 34px;
@@ -1700,16 +1592,16 @@ input[type="radio"]:not(:checked)+label .text-container {
     }
 }
 
-.grid-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    align-items: center;
-    flex-direction: row;
-    /* Two columns on larger screens */
-}
+    .grid-section {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        align-items: center;
+        flex-direction: row;
+        /* Two columns on larger screens */
+    }
 
 @media (max-width: 768px) {
     .grid-section {
@@ -2110,3 +2002,142 @@ input[type="radio"]:not(:checked)+label .text-container {
 
 
 /* For large devices */
+
+/* ================= EDUCATION CLEAN DESIGN ================= */
+
+.edu-item {
+    margin-bottom: 25px;
+}
+
+/* DATE */
+.edu-date {
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* HEADER (LOGO + TEXT) */
+.edu-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* LOGO */
+.edu-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* TITLE */
+.edu-header h4 {
+    font-size: 1rem;
+    color: var(--title-color);
+    margin-bottom: 4px;
+}
+
+/* DESCRIPTION */
+.edu-header p {
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+/* ICONS */
+.edu-icons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.edu-icons img {
+    width: 28px;
+    height: 28px;
+}
+
+/* CERTIFICATE LINK */
+.edu-certificate a {
+    font-size: 0.85rem;
+    color: var(--first-color);
+    text-decoration: none;
+}
+
+.edu-certificate a:hover {
+    text-decoration: underline;
+}
+
+/* ================= GRID ================= */
+
+.grid-education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .grid-education {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-header {
+        flex-direction: row;
+    }
+}
+
+/* ===== FIX TEXT SIZE + FONT ===== */
+
+/* DATE (2023 – 2025) */
+.card span:first-of-type {
+    font-size: 0.75rem;
+    color: var(--text-color-light);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* "Tap to view details" */
+.card span:last-of-type {
+    font-size: 0.7rem;
+    color: var(--text-color-light);
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* TITLE (Master's, Bachelor's, Company Name) */
+.card h4 {
+    font-size: 0.9rem;         /* ↓ smaller */
+    font-weight: 500;          /* ↓ less bold */
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+/* DESCRIPTION TEXT */
+.card p {
+    font-size: 0.8rem;         /* ↓ smaller */
+    font-weight: 300;          /* light text */
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* ICON TEXT (Masters / Bachelors / Intern) */
+.card .icon {
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.05);
+}
+
+/* CONTAINER SPACING */
+.text-container {
+    padding-top: 8px;
+}
+
+.about__description {
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
