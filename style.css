@@ -196,3 +196,62 @@ a:hover {
         margin: 25px auto;
     }
 }
+
+/* ---------- Analytics Page ---------- */
+/* Intro text */
+.intro{
+    margin-bottom:24px;
+}
+
+/* Simple project list */
+.dashboard-list{
+    margin:16px 0 32px;
+}
+
+/* Each expandable item */
+.dashboard-item{
+    border-bottom:1px solid #e5e5e5;
+    padding:10px 0;
+}
+
+/* Clickable project title */
+.dashboard-item summary{
+    cursor:pointer;
+    font-size:18px;
+    font-weight:500;
+    list-style:none;
+    padding:4px 0;
+}
+
+/* Remove default browser arrow */
+.dashboard-item summary::-webkit-details-marker{
+    display:none;
+}
+
+/* Custom + / − icon */
+.dashboard-item summary::after{
+    content:"+";
+    float:right;
+    font-size:20px;
+}
+
+.dashboard-item[open] summary::after{
+    content:"−";
+}
+
+/* PDF viewer */
+.pdf-frame{
+    width:100%;
+    height:520px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    margin-top:12px;
+    background:#fff;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .pdf-frame{
+        height:380px;
+    }
+}
