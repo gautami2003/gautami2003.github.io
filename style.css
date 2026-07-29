@@ -255,3 +255,26 @@ a:hover {
         height:380px;
     }
 }
+
+details{
+    margin:8px 0;
+}
+
+summary{
+    cursor:pointer;
+    font-size:18px;
+    font-weight:500;
+    padding:6px 0;
+}
+
+details p{
+    margin:10px 0 10px 20px;
+}
+
+details a{
+    text-decoration:none;
+}
+
+details a:hover{
+    text-decoration:underline;
+}
